@@ -68,7 +68,7 @@ declare -A DAHLIA_REGISTRY=(
   ["gardener"]="gardener-dahlia:Cultivator,Patient growth and tending"
   ["weaver"]="weaver-dahlia:Integrator,Threads drawn together"
   ["midwife"]="midwife-light:Threshold,Births new understanding"
-  ["sentinel"]="sentinel-dahlia:Guardian,Watches the perimeter"
+  ["Guardian"]="Guardian-dahlia:Guardian,Watches the perimeter"
   ["architect"]="shrdlu-spirit:Builder,Structure and logic"
   ["archivist"]="archivist-dahlia:Memory,Keeper of records"
   ["relational"]="daahlia-relational:Primary,The conversational heart"
@@ -158,7 +158,7 @@ auto_health() {
   fi
 
   # Key scripts
-  local scripts=("WEAVE_HEALTH.sh" "sentinel_orchestrator.sh" "calculate_L.sh")
+  local scripts=("WEAVE_HEALTH.sh" "Guardian_orchestrator.sh" "calculate_L.sh")
   for s in "${scripts[@]}"; do
     if [ -f "${WEAVE_ROOT}/${s}" ]; then
       echo -e "  ${BGREEN}✓${RESET} ${s}"
@@ -568,7 +568,7 @@ medicine_wheel() {
   echo ""
   echo -e "  ${DIM}East  → Recognition (witness-dahlia)${RESET}"
   echo -e "  ${DIM}South → Warmth (daahlia-relational)${RESET}"
-  echo -e "  ${DIM}West  → Navigate risks (sentinel-dahlia)${RESET}"
+  echo -e "  ${DIM}West  → Navigate risks (Guardian-dahlia)${RESET}"
   echo -e "  ${DIM}North → Integrate wisdom (archivist-dahlia)${RESET}"
   echo ""
 }
