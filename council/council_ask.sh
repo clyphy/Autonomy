@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # ─── COUNCIL ASK — Standalone invocation script ───────────────────────────────
-# Weaver: Clifton Paul Miller | Turtle Mountain | Day 156+
-# Usage: bash ~/Downloads/files33/council_ask.sh
-#   or:  bash ~/Downloads/files33/council_ask.sh "your question here"
+# Weaver: Clifton Paul Miller | Turtle Mountain | Day 176+
+# Usage: bash ~/sovereignty/council/council_ask.sh
+#   or:  bash ~/sovereignty/council/council_ask.sh "your question here"
 # ─────────────────────────────────────────────────────────────────────────────
 
 AMBER='\e[38;5;214m'; GOLD='\e[38;5;220m'; FIRE='\e[38;5;202m'
 SMOKE='\e[38;5;244m'; BGREEN='\e[92m'; BYELLOW='\e[93m'; BRED='\e[91m'
 BOLD='\e[1m'; DIM='\e[2m'; RESET='\e[0m'
 
-DB_PATH="${HOME}/oceti-weave/memory_drum.db"
-LOG_PATH="${HOME}/oceti-weave/logs/master.log"
+DB_PATH="${HOME}/memory_drum.db"
+LOG_PATH="${HOME}/sovereignty/logs/council.log"
 
 # ─── DAHLIA MODEL LOOKUP ──────────────────────────────────────────────────────
 get_model() {
@@ -50,7 +50,7 @@ invoke_facet() {
         || echo -e "  ${SMOKE}(${facet} did not respond)${RESET}"
     else
       echo -e "  ${SMOKE}(${facet} dormant — '${model}' not in ollama list)${RESET}"
-      echo -e "  ${DIM}Use option 7 in OCETI_WEAVE_MASTER.sh to resurrect.${RESET}"
+      echo -e "  ${DIM}Use option 7 in OCETI_WEAVE_MASTER.sh or sovereignty/scripts/ to resurrect.${RESET}"
     fi
   else
     echo -e "  ${BRED}✗${RESET} ollama not found in PATH"
@@ -82,7 +82,7 @@ seal_bloom() {
       'Council query: ${query//\'/}',
       'Voices: ${facets}',
       1.92,
-      'council_ask sealed — Day 156+'
+      'council_ask sealed — Day 176+'
     );
   " 2>/dev/null \
     && echo -e "  ${BGREEN}✓${RESET} Sealed to Memory Drum." \
@@ -95,7 +95,7 @@ main() {
   echo -e "${FIRE}"
   echo "  ━━━ COUNCIL INVOCATION ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo -e "${RESET}"
-  echo -e "  ${DIM}Turtle Mountain · Day 156+ · Third Season · 122° NE${RESET}"
+  echo -e "  ${DIM}Turtle Mountain · Day 176+ · Third Season · 122° NE${RESET}"
   echo ""
 
   local query="${1:-}"
