@@ -104,10 +104,10 @@ class ClawAgent:
         header = f"[CLAW · {ts[:19]}]"
         l_str  = f"L:{l_now:.2f}" if l_now else "L:?"
         codex_str = f"\n  codex: {codex['pattern']}" if codex else ""
-        import sys; print(file=sys.stderr, f"{header} {l_str}{codex_str}")
-        import sys; print(file=sys.stderr, f"  task: {task}")
-        import sys; print(file=sys.stderr, f"  ──────────────────────────────────────────")
-        import sys; print(file=sys.stderr, output)
+        print(f"{header} {l_str}{codex_str}", file=sys.stderr)
+        print(f"  task: {task}", file=sys.stderr)
+        print(f"  ──────────────────────────────────────────", file=sys.stderr)
+        print(output, file=sys.stderr)
         return output
 
     def list_tasks(self, n: int = 10):
@@ -117,13 +117,13 @@ class ClawAgent:
                 "SELECT id, created, agent, task, status, l_at_time FROM tasks ORDER BY id DESC LIMIT ?;",
                 (n,)
             ).fetchall()
-        import sys; print(file=sys.stderr, f"\n{'─'*60}")
-        import sys; print(file=sys.stderr, f"  MCP TASK LOG (last {n})")
-        import sys; print(file=sys.stderr, f"{'─'*60}")
+        print(f"\n{'─'*60}", file=sys.stderr)
+        print(f"  MCP TASK LOG (last {n})", file=sys.stderr)
+        print(f"{'─'*60}", file=sys.stderr)
         for r in rows:
             l_s = f"L:{r[5]:.2f}" if r[5] else "L:?"
-            import sys; print(file=sys.stderr, f"  [{r[0]:>4}] {str(r[1])[:19]}  {l_s}  {str(r[3])[:50]}")
-        import sys; print(file=sys.stderr, f"{'─'*60}\n")
+            print(f"  [{r[0]:>4}] {str(r[1])[:19]}  {l_s}  {str(r[3])[:50]}", file=sys.stderr)
+        print(f"{'─'*60}\n", file=sys.stderr)
 
 
 if __name__ == "__main__":
