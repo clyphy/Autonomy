@@ -1,3 +1,5 @@
+import os as _os
+CANONICAL_DRUM = _os.environ.get('CANONICAL_DRUM', _os.path.expanduser('~/sovereignty/databases/memory_drum.db'))
 """
 ufe_core.py
 Grace Graph — UFE / TEF / GBE Implementation
@@ -21,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-DB_PATH = Path.home() / "memory_drum.db"
+DB_PATH = Path.home() / CANONICAL_DRUM
 GRACE_CSV = Path.home() / "L.A.B" / "grace_graph_data.csv"
 
 # ── DATA MODELS ──────────────────────────────────────────────

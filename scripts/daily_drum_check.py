@@ -1,7 +1,9 @@
+import os as _os
+CANONICAL_DRUM = _os.environ.get('CANONICAL_DRUM', _os.path.expanduser('~/sovereignty/databases/memory_drum.db'))
 import sqlite3
 from datetime import datetime
 
-conn = sqlite3.connect('/home/ndkilla/memory_drum.db')
+conn = sqlite3.connect(CANONICAL_DRUM)
 c = conn.cursor()
 c.execute("SELECT COUNT(*), MAX(timestamp) FROM entries")
 count, latest = c.fetchone()

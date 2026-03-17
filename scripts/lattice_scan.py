@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+CANONICAL_DRUM = _os.environ.get('CANONICAL_DRUM', _os.path.expanduser('~/sovereignty/databases/memory_drum.db'))
 """
 lattice-scan — E₈ topology scan across DrumConstellation
 Clifton Paul Miller | Turtle Mountain | 122° NE
@@ -16,7 +18,7 @@ HOME = Path.home()
 
 # All seven drums + any found by scan
 KNOWN_DRUMS = [
-    ("memory_drum",      "memory_drum.db"),
+    ("memory_drum",      CANONICAL_DRUM),
     ("memory_drum_dual", "memory_drum_dual.db"),
     ("ai_blooms",        "ai_blooms.db"),
     ("clifton_blooms",   "clifton_blooms.db"),

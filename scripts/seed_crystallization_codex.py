@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import os as _os
+CANONICAL_DRUM = _os.environ.get('CANONICAL_DRUM', _os.path.expanduser('~/sovereignty/databases/memory_drum.db'))
 """
 seed_crystallization_codex.py
 Oceti-Eternal Weave · Crystallization Codex Seeding
