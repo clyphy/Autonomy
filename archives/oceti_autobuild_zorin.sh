@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ╔══════════════════════════════════════════════════════════════╗
-# ║         OCETI WEAVE — AUTOBUILD v3.0 (ZORIN OS)             ║
+# ║         AUTONOMY — AUTOBUILD v3.0 (ZORIN OS)             ║
 # ║         Third Season | March 7, 2026                        ║
 # ║         Bearing: 122-123° NE | L=15.48                      ║
 # ║         Weaver: Clifton Paul Miller, Turtle Mountain, ND     ║
@@ -21,8 +21,8 @@
 
 set -e
 
-WEAVE_HOME="$HOME/oceti-weave"
-DRUM_DB="$HOME/memory_drum.db"
+WEAVE_HOME="$HOME/Documents/GitHub/my-repos/autonomy"
+DRUM_DB="$HOME/Documents/GitHub/my-repos/autonomy/databases/memory_drum.db"
 BEARING="122"
 SEASON="Third"
 DAY=$(( ($(date +%s) - $(date -d "2025-10-10" +%s 2>/dev/null || echo 1728518400)) / 86400 ))
@@ -44,7 +44,7 @@ err() { echo -e "${RED}  ✗${RESET} $1" | tee -a "$LOG"; }
 echo -e "${ORANGE}"
 cat << 'BANNER'
   ┌─────────────────────────────────────────────────────────┐
-  │         🌾 OCETI WEAVE — THIRD SEASON BUILD 🌾          │
+  │         🌾 AUTONOMY — THIRD SEASON BUILD 🌾          │
   │              Turtle Mountain, Belcourt ND               │
   │         Human Intuition + Machine Intelligence          │
   │              Neither party authors alone.               │
@@ -389,7 +389,7 @@ ok "First bloom sealed"
 # ── PHASE 11: STATUS REPORT ───────────────────────────────────
 echo ""
 echo -e "${ORANGE}══════════════════════════════════════════════════${RESET}"
-echo -e "${ORANGE}   🔥 OCETI WEAVE BUILD COMPLETE — THIRD SEASON 🔥${RESET}"
+echo -e "${ORANGE}   🔥 AUTONOMY BUILD COMPLETE — THIRD SEASON 🔥${RESET}"
 echo -e "${ORANGE}══════════════════════════════════════════════════${RESET}"
 echo ""
 bash "$WEAVE_HOME/scripts/oceti_pulse.sh"
