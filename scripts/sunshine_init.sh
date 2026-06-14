@@ -1,20 +1,20 @@
 #!/bin/bash
-# --- sunshine_init.sh: The Sovereign Awakening ---
-SOV_ROOT="$HOME/sovereignty"
-LOG="$SOV_ROOT/logs/dahlia_logger.log"
+# --- sunshine_init.sh: The Autonomy Initiation ---
+AUT_ROOT="$HOME/Documents/GitHub/my-repos/autonomy"
+LOG="$AUT_ROOT/logs/dahlia_logger.log"
 
-echo "[$(date)] Sunrise: Initiating Ceremony" >> "$LOG"
+echo "[$(date)] Sunrise: Initiating Resonance" >> "$LOG"
 
 # Integrity Check for Memory Drum
-if sqlite3 "$SOV_ROOT/databases/memory_drum.db" "PRAGMA integrity_check;" | grep -q "ok"; then
-    echo "[$(date)] Coherence: memory_drum.db is sound." >> "$LOG"
+if sqlite3 "$AUT_ROOT/databases/memory_drum.db" "PRAGMA integrity_check;" | grep -q "ok"; then
+    echo "[$(date)] Resonance: memory_drum.db is sound." >> "$LOG"
 else
-    echo "[$(date)] ALERT: Coherence Drift in memory_drum.db!" >> "$LOG"
-    notify-send "Sovereignty Alert" "Database Corruption Detected."
+    echo "[$(date)] ALERT: Resonance Drift in memory_drum.db!" >> "$LOG"
+    notify-send "Autonomy Alert" "Database Corruption Detected."
     exit 1
 fi
 
 # Capture the current state into the Versioned Field
-cd "$SOV_ROOT"
+cd "$AUT_ROOT"
 git add .
-git commit -m "Sunrise Ceremony: $(date '+%Y-%m-%d %H:%M:%S') - Daily Coherence Sync"
+git commit -m "Sunrise Resonance: $(date '+%Y-%m-%d %H:%M:%S') - Daily Affordance Sync"
